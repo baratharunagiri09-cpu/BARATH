@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Barath A — Supply Chain & Logistics Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --navy: #0A2540;
+  --navy-mid: #103561;
+  --teal: #00B4D8;
+  --teal-light: #48CAE4;
+  --teal-pale: #ADE8F4;
+  --bg: #F4F7FB;
+  --bg-card: #FFFFFF;
+  --text-primary: #0A2540;
+  --text-secondary: #4A6080;
+  --text-muted: #8BA3C1;
+  --border: #DDE8F5;
+  --shadow-sm: 0 2px 12px rgba(10,37,64,0.07);
+  --shadow-md: 0 8px 32px rgba(10,37,64,0.12);
+  --shadow-lg: 0 20px 60px rgba(10,37,64,0.16);
+  --radius: 16px;
+  --radius-sm: 8px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 10px; }
+
+/* ===== UTILITIES ===== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 90px 0; }
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 40px;
+  background: var(--teal);
+  opacity: 0.5;
+}
+.section-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ===== NAV ===== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(244, 247, 251, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.nav-logo {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--teal); }
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+  letter-spacing: 0.01em;
+}
+.nav-links a:hover { color: var(--teal); }
+.nav-cta {
+  background: var(--navy);
+  color: white !important;
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  transition: var(--transition) !important;
+}
+.nav-cta:hover { background: var(--teal) !important; color: white !important; transform: translateY(-1px); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; padding: 4px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: var(--transition); }
+
+/* ===== HERO ===== */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 20%, rgba(0,180,216,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(10,37,64,0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,180,216,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,180,216,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding: 60px 0;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,180,216,0.08);
+  border: 1px solid rgba(0,180,216,0.25);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  width: fit-content;
+  animation: fadeSlideUp 0.6s ease both;
+}
+.hero-badge-dot {
+  width: 7px; height: 7px;
+  background: var(--teal);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.hero-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--navy);
+  margin-bottom: 20px;
+  animation: fadeSlideUp 0.7s ease 0.1s both;
+}
+.hero-title .accent {
+  background: linear-gradient(135deg, var(--teal), var(--teal-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  line-height: 1.75;
+  margin-bottom: 36px;
+  animation: fadeSlideUp 0.7s ease 0.2s both;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeSlideUp 0.7s ease 0.3s both;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: var(--transition);
+  letter-spacing: 0.01em;
+}
+.btn-primary {
+  background: var(--navy);
+  color: white;
+}
+.btn-primary:hover {
+  background: var(--teal);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,180,216,0.3);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+}
+.btn-outline:hover {
+  background: var(--navy);
+  color: white;
+  transform: translateY(-2px);
+}
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 44px;
+  animation: fadeSlideUp 0.7s ease 0.4s both;
+}
+.stat-item { display: flex; flex-direction: column; }
+.stat-num {
+  font-family: 'Sora', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.stat-num span { color: var(--teal); }
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+.stat-divider {
+  width: 1px;
+  background: var(--border);
+  align-self: stretch;
+  margin: 4px 0;
+}
+
+/* Hero Visual Panel */
+.hero-visual {
+  position: relative;
+  animation: fadeSlideLeft 0.8s ease 0.2s both;
+}
+.hero-card-main {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  position: relative;
+  z-index: 2;
+}
+.hero-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.avatar {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--navy), var(--teal));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Sora', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+}
+.hero-card-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1rem; color: var(--navy); }
+.hero-card-role { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.tag {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+.tag.active {
+  background: rgba(0,180,216,0.08);
+  border-color: rgba(0,180,216,0.3);
+  color: var(--teal);
+}
+.mini-timeline { display: flex; flex-direction: column; gap: 12px; }
+.mini-tl-item { display: flex; align-items: center; gap: 12px; }
+.mini-tl-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+.mini-tl-dot.light { background: var(--border); }
+.mini-tl-text { font-size: 0.82rem; color: var(--text-secondary); }
+.mini-tl-text strong { color: var(--navy); font-weight: 600; }
+.hero-card-float {
+  position: absolute;
+  background: white;
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+.float-1 {
+  top: -20px; right: -24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: float 4s ease-in-out infinite;
+}
+.float-2 {
+  bottom: -20px; left: -24px;
+  animation: float 4s ease-in-out 2s infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.float-icon { font-size: 1.4rem; }
+.float-text { font-size: 0.78rem; color: var(--text-secondary); }
+.float-text strong { display: block; font-weight: 600; color: var(--navy); font-size: 0.88rem; }
+.mbadge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  color: white;
+  border-radius: 8px;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeSlideLeft {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== ABOUT ===== */
+#about { background: white; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.about-text p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.about-text p strong { color: var(--navy); font-weight: 600; }
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+.highlight-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  transition: var(--transition);
+}
+.highlight-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+.highlight-icon { font-size: 1.5rem; margin-bottom: 8px; }
+.highlight-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+.highlight-value { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--navy); margin-top: 4px; }
+.edu-block { display: flex; flex-direction: column; gap: 20px; }
+.edu-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.edu-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--teal);
+}
+.edu-card:hover { box-shadow: var(--shadow-md); }
+.edu-degree { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--navy); margin-bottom: 4px; }
+.edu-inst { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; }
+.edu-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+.edu-pill {
+  display: inline-block;
+  background: rgba(0,180,216,0.08);
+  border: 1px solid rgba(0,180,216,0.2);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+/* ===== EXPERIENCE ===== */
+#experience { background: var(--bg); }
+.exp-timeline { position: relative; padding-left: 32px; }
+.exp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px; top: 8px; bottom: 8px;
+  width: 1.5px;
+  background: linear-gradient(to bottom, var(--teal), transparent);
+}
+.exp-item {
+  position: relative;
+  margin-bottom: 40px;
+  animation: fadeSlideUp 0.5s ease both;
+}
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: -27px; top: 24px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: white;
+  border: 2.5px solid var(--teal);
+  z-index: 1;
+}
+.exp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.exp-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(0,180,216,0.3);
+  transform: translateX(4px);
+}
+.exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 6px; }
+.exp-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--navy); }
+.exp-duration {
+  background: rgba(0,180,216,0.08);
+  border: 1px solid rgba(0,180,216,0.2);
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--teal);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.exp-company { font-size: 0.88rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 16px; }
+.exp-points { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.exp-points li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.65;
+}
+.exp-points li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-size: 0.8rem;
+  top: 2px;
+}
+.exp-points li strong { color: var(--navy); font-weight: 600; }
+
+/* ===== SKILLS ===== */
+#skills { background: white; }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.skill-group {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: var(--transition);
+}
+.skill-group:hover { box-shadow: var(--shadow-md); border-color: rgba(0,180,216,0.25); }
+.skill-group-icon { font-size: 2rem; margin-bottom: 12px; }
+.skill-group-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--navy); margin-bottom: 16px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+.skill-group:hover .skill-tag {
+  border-color: rgba(0,180,216,0.25);
+  color: var(--navy);
+}
+
+/* ===== RESEARCH ===== */
+#research { background: var(--bg); }
+.research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.research-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.research-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition);
+}
+.research-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.research-card:hover::after { transform: scaleX(1); }
+.research-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 500;
+}
+.research-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.92rem; color: var(--navy); line-height: 1.4; }
+.research-venue { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+.research-focus { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.research-tag {
+  background: rgba(0,180,216,0.07);
+  border: 1px solid rgba(0,180,216,0.15);
+  border-radius: 4px;
+  padding: 3px 9px;
+  font-size: 0.72rem;
+  color: var(--teal);
+  font-weight: 500;
+}
+
+/* ===== RESUME ===== */
+#resume {
+  background: var(--navy);
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+}
+#resume::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 90% 50%, rgba(0,180,216,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 50%, rgba(0,180,216,0.06) 0%, transparent 50%);
+}
+.resume-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+.resume-text h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.resume-text p { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 440px; }
+.btn-white {
+  background: white;
+  color: var(--navy);
+  font-weight: 700;
+}
+.btn-white:hover {
+  background: var(--teal);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,180,216,0.4);
+}
+.btn-ghost {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255,255,255,0.25);
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-2px);
+}
+
+/* ===== CONTACT ===== */
+#contact { background: white; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.contact-info { display: flex; flex-direction: column; gap: 20px; }
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.contact-item:hover {
+  border-color: var(--teal);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+}
+.contact-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: rgba(0,180,216,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.contact-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
+.contact-value { font-weight: 600; color: var(--navy); font-size: 0.92rem; margin-top: 2px; }
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-label { font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+.form-input, .form-textarea {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--navy);
+  transition: var(--transition);
+  outline: none;
+  resize: none;
+}
+.form-input:focus, .form-textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(0,180,216,0.1);
+  background: white;
+}
+.form-textarea { min-height: 120px; }
+.form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--navy);
+  padding: 32px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-logo {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+}
+.footer-logo span { color: var(--teal); }
+.footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.footer-links a:hover { color: var(--teal); }
+
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== MOBILE NAV ===== */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 65px; left: 0; right: 0;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px;
+  z-index: 99;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-md);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-menu a:last-child { border-bottom: none; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .research-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .resume-inner { flex-direction: column; text-align: center; }
+  .about-highlights { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .about-highlights { grid-template-columns: 1fr 1fr; }
+  .hero-actions { flex-direction: column; }
+  .btn { justify-content: center; }
+  .section { padding: 64px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Barath<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#research" onclick="closeMobile()">Research</a>
+  <a href="#resume" onclick="closeMobile()">Resume</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          Open to Opportunities · MBA 2025
+        </div>
+        <h1 class="hero-title">
+          From SEZ Docks to<br>
+          <span class="accent">E-Commerce Fulfilment</span><br>
+          — I Make Supply Chains Work.
+        </h1>
+        <p class="hero-desc">
+          MBA in Logistics & Marketing with real-world exposure across port operations, pharmaceutical cold chain, and high-volume e-commerce fulfilment. I bring operational discipline and process clarity to complex supply chain environments.
+        </p>
+        <div class="hero-actions">
+          <a href="#experience" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><polyline points="16,3 16,7"/><polyline points="8,3 8,7"/></svg>
+            View My Work
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Get In Touch
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">4<span>+</span></div>
+            <div class="stat-label">Internships</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-num">12<span>mo</span></div>
+            <div class="stat-label">Field Experience</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Research Papers</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-num">8.01</div>
+            <div class="stat-label">MBA CGPA</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="hero-visual">
+        <div class="hero-card-main">
+          <div class="hero-card-header">
+            <div class="avatar">BA</div>
+            <div>
+              <div class="hero-card-name">Barath A</div>
+              <div class="hero-card-role">Supply Chain & Logistics | MBA Candidate</div>
+            </div>
+          </div>
+          <div class="tag-cloud">
+            <span class="tag active">Supply Chain Ops</span>
+            <span class="tag active">E-Commerce</span>
+            <span class="tag">SEZ Logistics</span>
+            <span class="tag active">Cold Chain</span>
+            <span class="tag">OTM</span>
+            <span class="tag">Inventory Control</span>
+          </div>
+          <div class="mini-timeline">
+            <div class="mini-tl-item">
+              <div class="mini-tl-dot"></div>
+              <div class="mini-tl-text"><strong>Only Earth</strong> · E-Commerce SCM Intern · 5M</div>
+            </div>
+            <div class="mini-tl-item">
+              <div class="mini-tl-dot"></div>
+              <div class="mini-tl-text"><strong>DP World SEZ</strong> · Logistics Intern · 3M</div>
+            </div>
+            <div class="mini-tl-item">
+              <div class="mini-tl-dot light"></div>
+              <div class="mini-tl-text"><strong>Bafna Pharma</strong> · Logistics Ops Intern · 2M</div>
+            </div>
+            <div class="mini-tl-item">
+              <div class="mini-tl-dot light"></div>
+              <div class="mini-tl-text"><strong>Micro-Tech CNC</strong> · Production Intern · 2M</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card-float float-1">
+          <div class="float-icon">🎓</div>
+          <div class="float-text">
+            <div class="mbadge">MBA</div>
+            <strong>CGPA 8.01 / 10</strong>
+            <span>Saveetha School of Management</span>
+          </div>
+        </div>
+        <div class="hero-card-float float-2">
+          <div class="float-icon">📍</div>
+          <div class="float-text">
+            <strong>Chennai, Tamil Nadu</strong>
+            <span>Available · Relocatable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-label">Who I Am</div>
+        <h2 class="section-title">Building Supply Chains That Perform Under Pressure</h2>
+        <p>I'm an MBA candidate specialising in <strong>Logistics and Marketing</strong> at Saveetha School of Management, Chennai. Over the past year, I've built hands-on operational experience across four distinct supply chain environments — from port logistics at a Special Economic Zone to pharmaceutical cold chain and FMCG e-commerce fulfilment.</p>
+        <p>What sets me apart is the breadth of that exposure. I've coordinated RTO processes, managed GRN timelines, monitored temperature-sensitive pharma shipments, optimised yard turnaround at DP World, and contributed to production workflow analysis in a CNC manufacturing unit — all within 12 months of field experience.</p>
+        <p>I approach supply chain problems with <strong>systems thinking and operational discipline</strong> — I'm not just a process follower; I identify gaps, build structure, and deliver reliability.</p>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="highlight-icon">🎯</div>
+            <div class="highlight-label">Target Role</div>
+            <div class="highlight-value">Logistics Coordinator / SCM Analyst</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">📍</div>
+            <div class="highlight-label">Location</div>
+            <div class="highlight-value">Chennai · Open to Relocate</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">🛠</div>
+            <div class="highlight-label">Core Tools</div>
+            <div class="highlight-value">MS Excel · Oracle OTM</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon">📅</div>
+            <div class="highlight-label">Availability</div>
+            <div class="highlight-value">Immediately Available</div>
+          </div>
+        </div>
+      </div>
+      <div class="edu-block reveal">
+        <div class="section-label">Education</div>
+        <h2 class="section-title" style="font-size:1.5rem;">Academic Background</h2>
+        <div class="edu-card">
+          <div class="edu-degree">Master of Business Administration (MBA)</div>
+          <div class="edu-inst">Logistics & Marketing · Saveetha School of Management, Chennai</div>
+          <div class="edu-meta">
+            <span class="edu-pill">2023 – 2025</span>
+            <span class="edu-pill">CGPA: 8.01 / 10</span>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">Bachelor of Engineering (B.E.)</div>
+          <div class="edu-inst">Mechanical Engineering · Loyola-ICAM College of Engineering & Technology, Chennai</div>
+          <div class="edu-meta">
+            <span class="edu-pill">2019 – 2023</span>
+            <span class="edu-pill">CGPA: 7.91 / 10</span>
+          </div>
+        </div>
+        <div style="background:rgba(0,180,216,0.05); border:1px solid rgba(0,180,216,0.15); border-radius:12px; padding:20px; margin-top:4px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;">Languages</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <span style="background:white;border:1px solid var(--border);border-radius:6px;padding:5px 14px;font-size:0.82rem;font-weight:600;color:var(--navy);">English <span style="color:var(--text-muted);font-weight:400;">— Professional</span></span>
+            <span style="background:white;border:1px solid var(--border);border-radius:6px;padding:5px 14px;font-size:0.82rem;font-weight:600;color:var(--navy);">Tamil <span style="color:var(--text-muted);font-weight:400;">— Native</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px;" class="reveal">
+      <div class="section-label" style="justify-content:center;">Where I've Worked</div>
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-sub" style="margin:0 auto;">Four distinct environments. One consistent thread: bringing order, accuracy, and operational discipline to complex logistics challenges.</p>
+    </div>
+    <div class="exp-timeline">
+      <div class="exp-item reveal">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-title">E-Commerce Supply Chain Management Intern</div>
+            <div class="exp-duration">5 Months</div>
+          </div>
+          <div class="exp-company">🌿 Only Earth · Chennai</div>
+          <ul class="exp-points">
+            <li>Managed end-to-end order flow for <strong>e-commerce and distributor channels</strong>, coordinating high-volume billing and appointment scheduling for seamless order-to-delivery execution.</li>
+            <li>Built a <strong>structured weekly data-sharing cycle</strong> with the Finance team, delivering accurate GRN timelines while proactively handling delivery reschedules for priority accounts.</li>
+            <li>Served as the <strong>central coordination link for RTO processes</strong>, reducing transit time through proactive cross-functional communication with SCM and transport teams.</li>
+            <li>Conducted <strong>monthly logistics reporting and warehouse inventory reconciliations</strong> — including cycle counts and near-expiry audits — to prevent revenue leakage and inventory loss.</li>
+            <li>Coordinated <strong>daily delivery status updates</strong> with transportation partners, maintaining service-level reliability, distribution transparency, and operational control.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-title">Logistics Intern</div>
+            <div class="exp-duration">3 Months</div>
+          </div>
+          <div class="exp-company">🚢 DP World Special Economic Zones · Chennai</div>
+          <ul class="exp-points">
+            <li>Supported <strong>inbound and outbound logistics</strong> at SEZ level — container stuffing/destuffing, warehouse coordination, and cargo movement across yard and dispatch areas.</li>
+            <li>Managed <strong>vehicle flow and yard coordination</strong>, aligning loading/unloading schedules to maintain operational continuity and turnaround efficiency.</li>
+            <li>Executed <strong>inventory monitoring and control activities</strong>, ensuring stock accuracy, traceability, and movement discipline within SEZ warehouse operations.</li>
+            <li>Guided field staff and <strong>monitored on-site safety practices</strong>, supporting structured workflows, workforce coordination, and compliance with operational safety standards.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-title">Logistics Operations Intern</div>
+            <div class="exp-duration">2 Months</div>
+          </div>
+          <div class="exp-company">💊 Bafna Pharmaceuticals Ltd · Chennai</div>
+          <ul class="exp-points">
+            <li>Evaluated <strong>pharma-grade dispatch and finished goods logistics</strong>, identifying workflow gaps to improve inbound/outbound coordination and dispatch efficiency.</li>
+            <li>Monitored <strong>real-time environmental conditions</strong> of goods using temperature tracking systems, ensuring cold chain integrity and pharmaceutical compliance during storage and transit.</li>
+            <li>Assessed the effectiveness of <strong>data logger thermometers</strong> in shipment monitoring, supporting data-driven quality control for temperature-controlled logistics operations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-title">Production Intern</div>
+            <div class="exp-duration">2 Months</div>
+          </div>
+          <div class="exp-company">⚙️ Micro-Tech CNC Private Ltd · Hosur</div>
+          <ul class="exp-points">
+            <li>Audited <strong>production workflows</strong> to identify resource bottlenecks, developing actionable recommendations for CNC operation optimisation.</li>
+            <li>Improved <strong>resource utilisation</strong> through structured time-and-motion studies of manufacturing processes, focusing on reducing machine downtime and increasing operational efficiency.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px;" class="reveal">
+      <div class="section-label" style="justify-content:center;">What I Bring</div>
+      <h2 class="section-title">Core Competencies & Skills</h2>
+      <p class="section-sub" style="margin:0 auto;">Practical skills built across real operations — not just classroom theory.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="skill-group-icon">🔗</div>
+        <div class="skill-group-title">Supply Chain Operations</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Inbound & Outbound Logistics</span>
+          <span class="skill-tag">Inventory Control</span>
+          <span class="skill-tag">Production Workflow Analysis</span>
+          <span class="skill-tag">Resource Utilisation</span>
+          <span class="skill-tag">Quality Control</span>
+          <span class="skill-tag">Yard Management</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-icon">📦</div>
+        <div class="skill-group-title">E-Commerce Fulfilment</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Order Processing</span>
+          <span class="skill-tag">GRN & ASN Management</span>
+          <span class="skill-tag">Slot Booking & Rescheduling</span>
+          <span class="skill-tag">Reverse Logistics (RTO)</span>
+          <span class="skill-tag">Dispatch Planning</span>
+          <span class="skill-tag">Delivery Coordination</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-icon">🌡️</div>
+        <div class="skill-group-title">Cold Chain & Compliance</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Temperature Monitoring</span>
+          <span class="skill-tag">Pharma Logistics</span>
+          <span class="skill-tag">Data Logger Thermometers</span>
+          <span class="skill-tag">Cold Chain Integrity</span>
+          <span class="skill-tag">Safety Compliance</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-icon">🛠️</div>
+        <div class="skill-group-title">Technical Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Excel (Advanced)</span>
+          <span class="skill-tag">Oracle Transportation Mgmt</span>
+          <span class="skill-tag">Data Management</span>
+          <span class="skill-tag">Logistics Reporting</span>
+          <span class="skill-tag">Inventory Reconciliation</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-icon">📊</div>
+        <div class="skill-group-title">Analytics & Reporting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Monthly Logistics Reports</span>
+          <span class="skill-tag">Cycle Count Audits</span>
+          <span class="skill-tag">Near-Expiry Audits</span>
+          <span class="skill-tag">Time & Motion Study</span>
+          <span class="skill-tag">Data-Driven QC</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="skill-group-icon">🤝</div>
+        <div class="skill-group-title">Cross-Functional Coordination</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Vendor & Carrier Relations</span>
+          <span class="skill-tag">Finance Coordination</span>
+          <span class="skill-tag">Field Team Management</span>
+          <span class="skill-tag">SCM Communication</span>
+          <span class="skill-tag">Priority Account Handling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESEARCH ===== -->
+<section id="research" class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px;" class="reveal">
+      <div class="section-label" style="justify-content:center;">Academic Contributions</div>
+      <h2 class="section-title">Research & Projects</h2>
+      <p class="section-sub" style="margin:0 auto;">Published and presented work at national and international management conferences, demonstrating applied research capability in core supply chain domains.</p>
+    </div>
+    <div class="research-grid">
+      <div class="research-card reveal">
+        <div class="research-type">📄 Conference Presentation</div>
+        <div class="research-title">Enhanced Sustainable Inventory and Warehouse Management Practices Mediated by Modern Technologies</div>
+        <div class="research-venue">Presented at <strong>MBA STARSUMMIT 2024</strong> — Saveetha Transdisciplinary Annual Research Summit, Saveetha School of Management</div>
+        <div class="research-focus">
+          <span class="research-tag">Sustainable Warehousing</span>
+          <span class="research-tag">Digital Inventory</span>
+          <span class="research-tag">Smart Logistics</span>
+          <span class="research-tag">Operational Efficiency</span>
+        </div>
+      </div>
+      <div class="research-card reveal">
+        <div class="research-type">🌐 International Conference</div>
+        <div class="research-title">An Analysis of Temperature Data Monitoring Device in Cold Chain Logistics at Pharmaceuticals Industry, Chennai</div>
+        <div class="research-venue">Presented at <strong>1st International Conference on Management Practices in AI-Driven Business World</strong> — St. Joseph's Institute of Technology</div>
+        <div class="research-focus">
+          <span class="research-tag">Cold Chain</span>
+          <span class="research-tag">Temperature Monitoring</span>
+          <span class="research-tag">Pharma Logistics</span>
+          <span class="research-tag">Data-Driven QC</span>
+        </div>
+      </div>
+      <div class="research-card reveal">
+        <div class="research-type">🎓 MBA Final Year Project</div>
+        <div class="research-title">A Study on Supply Chain Performance and Sustainability Practices at DP World, Chennai</div>
+        <div class="research-venue"><strong>Final Year MBA Project – 2025</strong> · Saveetha School of Management · Based on primary research at DP World SEZ operations</div>
+        <div class="research-focus">
+          <span class="research-tag">SEZ Logistics</span>
+          <span class="research-tag">Sustainability</span>
+          <span class="research-tag">Operational Performance</span>
+          <span class="research-tag">SCM Optimisation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESUME ===== -->
+<section id="resume">
+  <div class="container">
+    <div class="resume-inner">
+      <div class="resume-text">
+        <h2>Ready to add value<br>from Day One.</h2>
+        <p>Targeting roles in Logistics Coordination, Supply Chain Analysis, or Operations. Download my resume to see the full picture, or reach out directly — I'm available immediately.</p>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="Barath__1_.pdf" download="Barath_A_Resume.pdf" class="btn btn-white">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+        <a href="https://www.linkedin.com/in/baratharunagiri/" target="_blank" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn Profile
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-label">Let's Connect</div>
+        <h2 class="section-title">Open to the Right Opportunity</h2>
+        <p class="section-sub" style="margin-bottom:32px;">Whether you're looking for a logistics coordinator, SCM analyst, or operations executive — I'm interested in conversations with teams building something meaningful. Let's talk.</p>
+        <div class="contact-info">
+          <a href="mailto:baratharunagiri09@gmail.com" class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">baratharunagiri09@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+917530062243" class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">+91 75300 62243</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/baratharunagiri/" target="_blank" class="contact-item">
+            <div class="contact-icon">🔗</div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">linkedin.com/in/baratharunagiri</div>
+            </div>
+          </a>
+          <div class="contact-item" style="cursor:default;">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Chennai, Tamil Nadu · Open to Relocate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:36px;">
+          <h3 style="font-family:'Sora',sans-serif;font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:6px;">Send a Message</h3>
+          <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:24px;">I'll get back to you within 24 hours.</p>
+          <div class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-input" placeholder="John Smith" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Company</label>
+                <input type="text" class="form-input" placeholder="Acme Corp" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-input" placeholder="you@company.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-textarea" placeholder="Tell me about the role or opportunity..."></textarea>
+            </div>
+            <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="handleFormSubmit(this)">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#hero" class="footer-logo">Barath<span>.</span></a>
+      <p class="footer-copy">© 2025 Barath A · Supply Chain & Logistics Professional · Chennai</p>
+      <div class="footer-links">
+        <a href="mailto:baratharunagiri09@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/baratharunagiri/" target="_blank">LinkedIn</a>
+        <a href="tel:+917530062243">Phone</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== MOBILE NAV =====
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+function closeMobile() {
+  mobileMenu.classList.remove('open');
+}
+document.addEventListener('click', (e) => {
+  if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+    mobileMenu.classList.remove('open');
+  }
+});
+
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Stagger children in groups
+document.querySelectorAll('.skills-grid, .research-grid, .about-highlights').forEach(parent => {
+  parent.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = `${i * 80}ms`;
+  });
+});
+
+// ===== NAV SCROLL EFFECT =====
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 60) {
+    nav.style.boxShadow = '0 2px 20px rgba(10,37,64,0.1)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+});
+
+// ===== ACTIVE NAV HIGHLIGHT =====
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 120) {
+      current = section.getAttribute('id');
+    }
+  });
+  navLinks.forEach(link => {
+    link.style.color = '';
+    if (link.getAttribute('href') === `#${current}`) {
+      link.style.color = 'var(--teal)';
+    }
+  });
+});
+
+// ===== FORM SUBMIT =====
+function handleFormSubmit(btn) {
+  const original = btn.innerHTML;
+  btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Message Sent!`;
+  btn.style.background = '#10B981';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.innerHTML = original;
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 3000);
+}
+
+// ===== SMOOTH TYPING EFFECT FOR HERO =====
+document.addEventListener('DOMContentLoaded', () => {
+  const tags = document.querySelectorAll('.tag');
+  tags.forEach((tag, i) => {
+    tag.style.opacity = '0';
+    tag.style.transform = 'translateY(8px)';
+    tag.style.transition = 'all 0.3s ease';
+    setTimeout(() => {
+      tag.style.opacity = '1';
+      tag.style.transform = 'translateY(0)';
+    }, 600 + i * 100);
+  });
+});
+</script>
+</body>
+</html>
